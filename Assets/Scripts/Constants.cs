@@ -8,6 +8,6 @@ public static class Constants
      * Constants for bullets
      */
     public const float bulletSpeed = 5;
-    public const float bulletPush = 5;
-    public const int bulletLifeTick = 7;
+    public const float bulletPushForce = 650;
+    public const int bulletLifetime = 10;
 }
