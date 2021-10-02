@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public static class Constants 
+{
+    /*
+     * Constants for bullets
+     */
+    public const float bulletSpeed = 5;
+    public const float bulletPush = 5;
+    public const int bulletLifeTick = 7;
+}
