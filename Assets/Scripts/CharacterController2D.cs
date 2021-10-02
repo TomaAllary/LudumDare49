@@ -12,6 +12,10 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 
+	//Goat animator
+	private Animator myGoatAnimator;
+
+
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -36,6 +40,8 @@ public class CharacterController2D : MonoBehaviour
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+
+		myGoatAnimator = GetComponent<Animator>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -137,6 +143,9 @@ public class CharacterController2D : MonoBehaviour
 			// Add a vertical force to the player.
 			canJump = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+
+			myGoatAnimator.SetBool("grounded", false);
+			myGoatAnimator.SetTrigger("jump");
 		}
 
 		
@@ -156,5 +165,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public void ResetJump() {
 		canJump = true;
+
+		if(m_Grounded)
+			myGoatAnimator.SetBool("grounded", true);
 	}
 }
