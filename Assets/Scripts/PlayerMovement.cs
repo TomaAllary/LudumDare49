@@ -5,10 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
+    public Camera cam;
+    public GameObject goatSurroundings;
+
     public float runspeed = 40f;
+
+
     float horizontalMove = 0f;
     bool isJumping = false;
-    public Animator myAnimator;
+    private Animator myAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runspeed;
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             isJumping = true;
         }
@@ -37,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        cam.transform.position = new Vector3(transform.position.x, cam.transform.position.y, cam.transform.position.z);
+
+        goatSurroundings.transform.position = transform.position;
+
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, isJumping);
         isJumping = false;
     }
