@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Hunter : MonoBehaviour
 {
+    public GameObject Bullet;
+    public Transform barrelEnd;
+
     private Animator animator;
 
     private float timer = 0;
     private float maxTimer = 4;
     private float minTimer = 2;
+
+    private float FireTimer = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +35,33 @@ public class Hunter : MonoBehaviour
         else {
             timer -= Time.deltaTime;
         }
+
+        if(FireTimer < 0) {
+            Fire();
+            FireTimer = 2;
+        }
+        else {
+            FireTimer -= Time.deltaTime;
+        }
+
+        
+    }
+
+
+
+    private void Fire() {
+
+        animator.SetTrigger("fire");
+
+        StartCoroutine("fireBullet");
+    }
+
+    IEnumerator fireBullet() {
+        yield return new WaitForSeconds(0.35f);
+
+        GameObject bullet = Instantiate(Bullet);
+        bullet.transform.position = barrelEnd.position;
+
+        bullet.GetComponent<Bullet>().setDirection(barrelEnd.position.x < transform.position.x);
     }
 }
