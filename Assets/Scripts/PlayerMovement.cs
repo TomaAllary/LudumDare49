@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool isJumping = false;
     private Animator myAnimator;
+    public HealthBar rageBar;
 
     // Start is called before the first frame update
     void Start()
@@ -51,11 +52,11 @@ public class PlayerMovement : MonoBehaviour
         isJumping = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Weapon"))
+        if (other.gameObject.tag == "weapon")
         {
-            rageMeter += 1.0f;
+            rageBar.GetComponent<HealthBar>().addHealth(.1f);
         }
     }
 }
