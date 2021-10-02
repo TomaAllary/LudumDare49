@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject goatSurroundings;
 
     public float runspeed = 40f;
-
+    public float rageMeter = 0f;
 
     float horizontalMove = 0f;
     bool isJumping = false;
@@ -49,5 +49,13 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, isJumping);
         isJumping = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Weapon"))
+        {
+            rageMeter += 1.0f;
+        }
     }
 }
