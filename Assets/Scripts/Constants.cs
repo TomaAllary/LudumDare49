@@ -15,4 +15,9 @@ public static class Constants
      * Constants for PicPic
      */
     public const float picpicSpeed = 1f;
+
+    /*
+    * Constants for Walking Dead
+    */
+    public const float walkingDeadSpeed = 1f;
 }

@@ -11,6 +11,7 @@ public class HealthBar : MonoBehaviour
     private bool left = true;
     private float[] shakeTable = new float[] { .1f, .2f, .3f, .4f, .5f, .7f };
     public ParticleSystem particles;
+    public GameObject crack;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class HealthBar : MonoBehaviour
         bar.localScale = new Vector3(0, 1, 1);
         particles.Stop();
         fill.color = gradient.Evaluate(0f);
+        crack.SetActive(false);
     }
 
     public void setHealth (float sizeNormalized)
@@ -53,6 +55,7 @@ public class HealthBar : MonoBehaviour
             Vector3 current = bar.localScale;
             current.x = 1;
             bar.localScale = current;
+            crack.SetActive(true);
         }
         else if (bar.localScale.x < 0)
         {
@@ -60,10 +63,12 @@ public class HealthBar : MonoBehaviour
             current.x = 0;
             bar.localScale = current;
             particles.Stop();
+            crack.SetActive(false);
         }
         else
         {
             particles.Stop();
+            crack.SetActive(false);
         }
     }
 }
