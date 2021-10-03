@@ -12,40 +12,54 @@ public class GoatAnimation : MonoBehaviour
 
     public Animator EndingAnim;
 
-    private float dropTimer = 16;
+    private bool canWalk = false;
 
     public float speed = 6;
+
+    public AudioSource audio;
+    public AudioSource goatAudio;
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
-        anim.SetBool("isWalking", true);   
+        anim.SetBool("isWalking", true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().MovePosition(transform.position + (Time.deltaTime * speed * Vector3.right));
+        if(canWalk)
+            GetComponent<Rigidbody2D>().MovePosition(transform.position + (Time.deltaTime * speed * Vector3.right));
 
-        if (dropTimer < 0) {
-            droppingTitle.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            canWalk = true;
+            goatAudio.PlayDelayed(0.5f);
         }
 
-        dropTimer -= Time.deltaTime;
-    }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            droppingTitle.SetActive(true);
+            audio.PlayDelayed(0.27f);
+        }
 
-    private void OnCollisionEnter(Collision collision) {
-        collision.gameObject.GetComponent<Rigidbody2D>().constraints = 0;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+            EndingAnim.SetTrigger("play");
 
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 7, ForceMode2D.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+            SceneManager.LoadScene("Menu");
+
+        }
+
     }
 
     private IEnumerator end() {
         yield return new WaitForSeconds(3);
 
-        EndingAnim.SetTrigger("play");
 
         yield return new WaitForSeconds(4);
 
-        SceneManager.LoadScene("Menu");
     }
 }
