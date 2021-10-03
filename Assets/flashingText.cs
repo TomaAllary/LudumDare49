@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class moveOnArrow : MonoBehaviour
+public class flashingText : MonoBehaviour
 {
-    public GameObject[] arrows;
+    public GameObject[] texts;
     public int current;
     // Start is called before the first frame update
     void Start()
     {
-        current = 0;
+        
     }
 
     // Update is called once per frame
@@ -17,29 +18,34 @@ public class moveOnArrow : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            
-            arrows[current].SetActive(false);
             current--;
             if (current < 0)
             {
                 current = 3;
             }
-            arrows[current].SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
-            arrows[current].SetActive(false);
-            
             current++;
             if (current == 4)
             {
                 current = 0;
             }
-            arrows[current].SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
-
+            StartCoroutine(waiter());
+            
         }
+    }
+    IEnumerator waiter()
+    {
+        texts[current].SetActive(true);  
+        yield return new WaitForSecondsRealtime(0.1f);
+        texts[current].SetActive(false);
+        yield return new WaitForSecondsRealtime(0.1f);
+        texts[current].SetActive(true);
+        yield return new WaitForSecondsRealtime(0.1f);
+        texts[current].SetActive(false);
     }
 }
