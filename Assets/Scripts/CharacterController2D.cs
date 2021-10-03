@@ -14,8 +14,8 @@ public class CharacterController2D : MonoBehaviour
 
 	//Goat animator
 	private Animator myGoatAnimator;
-
-
+	public bool looseRage = false;
+	public HealthBar healthBar;
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -55,6 +55,7 @@ public class CharacterController2D : MonoBehaviour
 	private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
+		looseRage = false;
 		m_Grounded = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
@@ -67,6 +68,11 @@ public class CharacterController2D : MonoBehaviour
 				m_Grounded = true;
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
+				if(colliders[i].gameObject.layer == 7)
+                {
+					//looseRage = true;
+					healthBar.setHealth(0f);
+                }
 			}
 		}
 	}
