@@ -6,6 +6,8 @@ public class Picpic : MonoBehaviour
 {
     private bool isDown = false;
     public groundCheck gc;
+    public WallCheck wc;
+    public GameObject picpicSurroundings;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class Picpic : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         if (!isDown)
         {
-            if (!isGrounded())
+            if (!isGrounded() || isWalled())
             {
                 Vector3 current = gameObject.transform.eulerAngles;
                 current.y += 180;
@@ -37,4 +39,9 @@ public class Picpic : MonoBehaviour
     {
         return gc.GetComponent<groundCheck>().isGrounded;
     }
+    private bool isWalled()
+    {
+       return wc.GetComponent<WallCheck>().isWalled;
+    }
+
 }
