@@ -44,4 +44,16 @@ public class Picpic : MonoBehaviour
        return wc.GetComponent<WallCheck>().isWalled;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.tag == "Player") {
+            Vector3 dir = collision.gameObject.transform.position - transform.position;
+
+            //reset player jump
+            collision.gameObject.GetComponent<CharacterController2D>().ResetJump();
+
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Constants.picpicPushForce * dir);
+        }
+    }
+
 }

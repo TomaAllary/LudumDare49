@@ -16,7 +16,7 @@ public class GoatAnimation : MonoBehaviour
 
     public float speed = 6;
 
-    public AudioSource audio;
+    public AudioSource audioFall;
     public AudioSource goatAudio;
     public AudioClip audioClip;
 
@@ -40,7 +40,7 @@ public class GoatAnimation : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2)) {
             droppingTitle.SetActive(true);
-            audio.PlayDelayed(0.27f);
+            audioFall.PlayDelayed(0.27f);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
