@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float runspeed = 40f;
     public float rageMeter = 0f;
-    public ParticleSystem partible;
+    public ParticleSystem goatSparkle;
     float horizontalMove = 0f;
     bool isJumping = false;
     private Animator myAnimator;
@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
         inCriss = false;
+        goatSparkle.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,10 +44,16 @@ public class PlayerMovement : MonoBehaviour
         if(rageBar.getRageLevel() >= 1)
         {
             inCriss = true;
+            goatSparkle.gameObject.SetActive(true);
         }
         else if(rageBar.getRageLevel() <= 0)
         {
             inCriss = false;
+            goatSparkle.gameObject.SetActive(false);
+        }
+        if(gameObject.GetComponent<CharacterController2D>().looseRage && !inCriss)
+        {
+            rageBar.setHealth(0);
         }
     }
 

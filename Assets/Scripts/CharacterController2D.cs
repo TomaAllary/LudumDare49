@@ -70,8 +70,7 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 				if(colliders[i].gameObject.layer == 7)
                 {
-					//looseRage = true;
-					healthBar.setHealth(0f);
+					looseRage = true;
                 }
 			}
 		}
