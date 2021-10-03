@@ -2000,7 +2000,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40.000004
+      m_AnimationSpeed: 40
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -5, z: 0}
@@ -2088,7 +2088,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40.000004
+      m_AnimationSpeed: 40
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -2, y: -5, z: 0}
@@ -2264,7 +2264,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40
+      m_AnimationSpeed: 40.000004
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 6, y: -5, z: 0}
@@ -2991,6 +2991,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794e3fcddfd120848a1016dcdab622c8, type: 3}
+--- !u!198 &2099195357 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4842256289906320199, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
+  m_PrefabInstance: {fileID: 8735964474158396492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &875864622329627691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3593,8 +3598,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8735964473776443156, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1547238774}
+    - target: {fileID: 8735964473776443156, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: m_JumpForce
-      value: 700
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8735964473776443156, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: m_AirControl
@@ -3656,5 +3665,9 @@ PrefabInstance:
       propertyPath: rageBar
       value: 
       objectReference: {fileID: 1547238774}
+    - target: {fileID: 8735964473776443163, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
+      propertyPath: goatSparkle
+      value: 
+      objectReference: {fileID: 2099195357}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
