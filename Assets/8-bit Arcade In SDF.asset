@@ -51,7 +51,7 @@ Material:
     - _ColorMask: 15
     - _CullMode: 0
     - _Diffuse: 0.5
-    - _FaceDilate: 0
+    - _FaceDilate: 0.1
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0.05
@@ -62,15 +62,15 @@ Material:
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
-    - _OutlineSoftness: 0
+    - _OutlineSoftness: 1
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 1
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.36429873
+    - _ScaleRatioB: 0.59375
+    - _ScaleRatioC: 0.59375
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: 8-bit Arcade In SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 106069356
   material: {fileID: -6915994984222498972}
-  materialHashCode: 0
+  materialHashCode: -201967796
   m_Version: 1.1.0
   m_SourceFontFileGUID: c27902e1c3394e444bb55a780e9444ea
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: c27902e1c3394e444bb55a780e9444ea, type: 3}
