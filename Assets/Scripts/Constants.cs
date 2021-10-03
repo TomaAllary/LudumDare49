@@ -10,6 +10,7 @@ public static class Constants
     public const float bulletSpeed = 5;
     public const float bulletPushForce = 650;
     public const float picpicPushForce = 850;
+    public const float walkindDeadPushForce = 1050;
     public const int bulletLifetime = 10;
 
     /*

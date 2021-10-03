@@ -7,10 +7,14 @@ public class WalkingDead : MonoBehaviour
     public groundCheck gc;
     public WallCheck wc;
     public GameObject walkingDeadSurroundings;
+
+
+    private WalkingDeadAttack attackScript;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        attackScript = GetComponentInChildren<WalkingDeadAttack>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,7 @@ public class WalkingDead : MonoBehaviour
             {
                 Vector3 current = gameObject.transform.eulerAngles;
                 current.y += 180;
+                attackScript.facingRight *= -1;
                 gameObject.transform.eulerAngles = current;
             }
             transform.position = (transform.position + -transform.right * Time.fixedDeltaTime * Constants.walkingDeadSpeed);
@@ -41,4 +46,14 @@ public class WalkingDead : MonoBehaviour
     {
         return wc.GetComponent<WallCheck>().isWalled;
     }
+
+    public void StartAttack() {
+        attackScript.StartAttack();
+    }
+
+    public void StopAttack() {
+        attackScript.StopAttack();
+    }
+
+
 }
