@@ -10,16 +10,18 @@ public class PlayerMovement : MonoBehaviour
 
     public float runspeed = 40f;
     public float rageMeter = 0f;
-
+    public ParticleSystem partible;
     float horizontalMove = 0f;
     bool isJumping = false;
     private Animator myAnimator;
     public HealthBar rageBar;
+    public bool inCriss;
 
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        inCriss = false;
     }
 
     // Update is called once per frame
@@ -38,7 +40,14 @@ public class PlayerMovement : MonoBehaviour
         {
             myAnimator.SetBool("isMoving", false);
         }
-
+        if(rageBar.getRageLevel() >= 1)
+        {
+            inCriss = true;
+        }
+        else if(rageBar.getRageLevel() <= 0)
+        {
+            inCriss = false;
+        }
     }
 
     private void FixedUpdate()
@@ -58,5 +67,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rageBar.GetComponent<HealthBar>().addHealth(.1f);
         }
+
     }
+
 }

@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    float lifeTick = 7;
+    private float bulletSpeed = Constants.bulletSpeed;
+
+    private float lifetime = Constants.bulletLifetime;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,29 +16,37 @@ public class bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void FixedUpdate()
-    {
-        transform.position = (transform.position + transform.up * Time.fixedDeltaTime * Constants.bulletSpeed);
-        lifeTick -= Time.deltaTime;
-        if (lifeTick <= 0)
+        transform.position = transform.position + new Vector3(bulletSpeed * Time.deltaTime, 0, 0);
+
+        lifetime -= Time.deltaTime;
+
+        if (lifetime < 0)
             Destroy(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    public void setDirection(bool left) {
+        if (left)
+            bulletSpeed *= -1;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.gameObject.tag == "Player") {
+            Vector3 dir;
+
+            float yDiff = collision.gameObject.transform.position.y - transform.position.y;
+
+            if (yDiff > 0.5)
+                dir = Vector3.up;
+            else
+                dir = ((Vector3.up * 1.7f * Mathf.Abs(bulletSpeed)) + (Vector3.right * bulletSpeed)).normalized;
+
+            //reset player jump
+            collision.gameObject.GetComponent<CharacterController2D>().ResetJump();
+
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Constants.bulletPushForce * dir);
+
             Destroy(gameObject);
         }
-    }
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.collider.tag == "Player")
-        {
-            Destroy(this.gameObject);
-        }
-
     }
 }
