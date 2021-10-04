@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System;
 
 public class flashingText : MonoBehaviour
 {
     public GameObject[] texts;
     public int current;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,14 @@ public class flashingText : MonoBehaviour
     }
     IEnumerator waiter()
     {
+        string scene = "";
+        if (current == 0) {
+            //play game
+            scene = "SampleScene";
+        }else if (current == 2) {
+            //load credits
+            scene = "credits";
+        }
         texts[current].SetActive(true);  
         yield return new WaitForSecondsRealtime(0.1f);
         texts[current].SetActive(false);
@@ -47,5 +58,17 @@ public class flashingText : MonoBehaviour
         texts[current].SetActive(true);
         yield return new WaitForSecondsRealtime(0.1f);
         texts[current].SetActive(false);
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        if (current == 3)
+            Application.Quit();
+        else if(current != 1){
+            SceneManager.LoadScene(scene);
+        }
+
     }
+
+
+
+
 }
