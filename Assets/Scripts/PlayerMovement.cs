@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
 
-        cam.transform.position = new Vector3(transform.position.x, cam.transform.position.y, cam.transform.position.z);
+        cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
 
         goatSurroundings.transform.position = transform.position;
 
