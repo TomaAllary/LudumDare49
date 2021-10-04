@@ -33,7 +33,9 @@ public class KillSwitch : MonoBehaviour
 
     IEnumerator NextScene() {
         if (nextScene != "") {
-            yield return new WaitForSeconds(2);
+            GameObject.Find("bg music").GetComponent<AudioSource>().volume = 0.1f;
+
+            yield return new WaitForSeconds(3);
 
             SceneManager.LoadScene(nextScene);
         }
