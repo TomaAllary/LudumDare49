@@ -68,6 +68,6 @@ public class Hunter : MonoBehaviour
         bullet.transform.rotation = gameObject.transform.rotation;
         //bullet.GetComponent<ParticleSystem>().startRotation = -transform.rotation.eulerAngles.z / (180.0f / Mathf.PI);
         //bullet.GetComponent<ParticleSystem>().transform.rotation = gameObject.transform.rotation;
-        bullet.GetComponent<Bullet>().setDirection(barrelEnd.position.x < transform.position.x);
+        bullet.GetComponent<bullet>().setDirection(barrelEnd.position.x < transform.position.x);
     }
 }
