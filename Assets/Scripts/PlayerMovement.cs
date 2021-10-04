@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
     public Camera cam;
     public GameObject goatSurroundings;
+    public Animator deathAnim;
 
     public AnimatorOverrideController inCrissController;
     public AnimatorOverrideController happyController;
@@ -104,6 +106,10 @@ public class PlayerMovement : MonoBehaviour
                 rageTimer = 1;
                 rageBar.addHealth(-Constants.rageLostPerSecond);
             }
+        }
+
+        if(transform.position.y < -6) {
+            deathAnim.SetTrigger("death");
         }
     }
 

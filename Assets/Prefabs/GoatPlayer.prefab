@@ -5073,9 +5073,13 @@ MonoBehaviour:
   controller: {fileID: 8735964473776443156}
   cam: {fileID: 0}
   goatSurroundings: {fileID: 8735964473271282229}
+  deathAnim: {fileID: 0}
   inCrissController: {fileID: 22100000, guid: d8178eb16ca17dd43906b5cb1e021a38, type: 2}
   happyController: {fileID: 22100000, guid: e9caa8ca3eb5e3143a995c7ef74e095e, type: 2}
-  hunterPrefab: {fileID: 875864622339972766, guid: 794e3fcddfd120848a1016dcdab622c8, type: 3}
+  hunters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   runspeed: 40
   rageMeter: 0
   goatSparkle: {fileID: 4842256289906320199}
