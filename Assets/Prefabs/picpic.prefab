@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 5227105120623178816}
   m_Layer: 6
   m_Name: PicPicSurrounding
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

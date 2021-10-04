@@ -11,7 +11,8 @@ public class playOnWalk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        walkywalky.gameObject.GetComponent<AudioSource>();
+        clip = walkywalky.GetComponent<AudioClip>();
     }
 
     // Update is called once per frame

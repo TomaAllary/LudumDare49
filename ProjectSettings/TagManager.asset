@@ -6,6 +6,8 @@ TagManager:
   tags:
   - weapon
   - Platform
+  - doubleDamage
+  - melee
   layers:
   - Default
   - TransparentFX
