@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "weapon")
         {
-            rageBar.GetComponent<HealthBar>().addHealth(.1f);
+            rageBar.GetComponent<HealthBar>().addHealth(.2f);
         }
 
     }
