@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
 
             Destroy(gameObject);
         }
-        else if(collision.gameObject.tag == "Platform")
+        else if(collision.gameObject.layer == 7)
         {
             Destroy(this.gameObject);
         }

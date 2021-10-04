@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 1225240049}
   m_Layer: 0
   m_Name: walkingDeadSurroundings
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 612db5a2d25119c4f92f1f4450907819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rageBar: {fileID: 0}
   attackCollider: {fileID: 1225240048}
   facingRight: -1
 --- !u!1 &4950876406046403193
@@ -187,7 +188,7 @@ GameObject:
   - component: {fileID: 47328520831868248}
   m_Layer: 0
   m_Name: WalkingDead
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
