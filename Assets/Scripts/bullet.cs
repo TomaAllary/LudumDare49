@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject bulletPop;
+
     private float bulletSpeed = Constants.bulletSpeed;
 
     private float lifetime = Constants.bulletLifetime;
@@ -43,14 +45,39 @@ public class Bullet : MonoBehaviour
             //reset player jump
             collision.gameObject.GetComponent<CharacterController2D>().ResetJump();
 
+            //hurt
+            collision.gameObject.GetComponent<PlayerMovement>().PlayHurtSound();
+
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Constants.bulletPushForce * dir);
 
-            Destroy(gameObject);
+            StartCoroutine(PopBullet());
         }
         else if(collision.gameObject.layer == 7)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(PopBullet());
         }
+    }
+
+    private IEnumerator PopBullet() {
+        Destroy(transform.GetChild(0).gameObject);
+        Destroy(GetComponent<SpriteRenderer>());
+
+        Transform popEffect = Instantiate(bulletPop).transform;
+
+        //direction of pop
+        if (bulletSpeed < 0) {
+            Vector3 current = popEffect.eulerAngles;
+            current.y += 180;
+            popEffect.eulerAngles = current;
+        }
+        popEffect.position = transform.position;
+
+        yield return new WaitForSeconds(3);
+
+        Destroy(popEffect.gameObject);
+
+        Destroy(this.gameObject);
+
     }
 }

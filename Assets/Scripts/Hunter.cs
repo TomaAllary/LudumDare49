@@ -6,6 +6,7 @@ public class Hunter : MonoBehaviour
 {
     public GameObject Bullet;
     public Transform barrelEnd;
+    public AudioSource audio;
 
     private Animator animator;
 
@@ -57,9 +58,12 @@ public class Hunter : MonoBehaviour
     }
 
     IEnumerator fireBullet() {
+        audio.PlayDelayed(0.2f);
+
         yield return new WaitForSeconds(0.35f);
 
         GameObject bullet = Instantiate(Bullet);
+
         bullet.transform.position = barrelEnd.position;
         bullet.transform.rotation = gameObject.transform.rotation;
         //bullet.GetComponent<ParticleSystem>().startRotation = -transform.rotation.eulerAngles.z / (180.0f / Mathf.PI);

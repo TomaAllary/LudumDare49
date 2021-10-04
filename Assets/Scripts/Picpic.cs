@@ -51,6 +51,9 @@ public class Picpic : MonoBehaviour
             //reset player jump
             collision.gameObject.GetComponent<CharacterController2D>().ResetJump();
 
+            //hurt
+            collision.gameObject.GetComponent<PlayerMovement>().PlayHurtSound();
+
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Constants.picpicPushForce * dir);
             collision.gameObject.GetComponent<PlayerMovement>().rageBar.addHealth(.2f);

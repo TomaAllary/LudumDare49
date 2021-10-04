@@ -4928,6 +4928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61571fbda667e644497da432e7c8d8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPop: {fileID: 9074477341327626719, guid: 466d271f1b1490a479eb1a08cb05921b, type: 3}
 --- !u!50 &5175866260634168663
 Rigidbody2D:
   serializedVersion: 4
