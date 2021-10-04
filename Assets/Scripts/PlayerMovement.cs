@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Camera cam;
     public GameObject goatSurroundings;
+
+    public AnimatorOverrideController inCrissController;
+    public AnimatorOverrideController happyController;
+
     public float runspeed = 40f;
     public float rageMeter = 0f;
     public ParticleSystem goatSparkle;
@@ -15,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator myAnimator;
     public HealthBar rageBar;
     public bool inCriss;
-   
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,13 +47,20 @@ public class PlayerMovement : MonoBehaviour
         }
         if(rageBar.getRageLevel() >= 1)
         {
+            if (!inCriss) //to call it less often
+                myAnimator.runtimeAnimatorController = inCrissController;
+
             inCriss = true;
+
             goatSparkle.gameObject.SetActive(true);
             controller.m_JumpForce = Constants.goatRageJumpForce;
         }
         else if(rageBar.getRageLevel() <= 0)
         {
+            if(inCriss) //to call it less often
+                myAnimator.runtimeAnimatorController = happyController;
             inCriss = false;
+
             goatSparkle.gameObject.SetActive(false);
             controller.m_JumpForce = Constants.goatNormalJumpForce;
         }

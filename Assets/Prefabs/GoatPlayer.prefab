@@ -5028,7 +5028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045b0b37375614a47b7f969cdf5c5bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 500
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -5038,6 +5038,8 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 8735964473237292993}
   m_CeilingCheck: {fileID: 8735964472312410085}
   m_CrouchDisableCollider: {fileID: 0}
+  looseRage: 0
+  healthBar: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5071,9 +5073,13 @@ MonoBehaviour:
   controller: {fileID: 8735964473776443156}
   cam: {fileID: 0}
   goatSurroundings: {fileID: 8735964473271282229}
+  inCrissController: {fileID: 22100000, guid: d8178eb16ca17dd43906b5cb1e021a38, type: 2}
+  happyController: {fileID: 22100000, guid: e9caa8ca3eb5e3143a995c7ef74e095e, type: 2}
   runspeed: 40
   rageMeter: 0
+  goatSparkle: {fileID: 4842256289906320199}
   rageBar: {fileID: 0}
+  inCriss: 0
 --- !u!50 &8735964473776443162
 Rigidbody2D:
   serializedVersion: 4
