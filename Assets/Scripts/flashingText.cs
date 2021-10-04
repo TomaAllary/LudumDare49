@@ -46,7 +46,7 @@ public class flashingText : MonoBehaviour
         string scene = "";
         if (current == 0) {
             //play game
-            scene = "SampleScene";
+            scene = "Tuto";
         }else if (current == 2) {
             //load credits
             scene = "credits";

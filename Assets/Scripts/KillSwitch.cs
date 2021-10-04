@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KillSwitch : MonoBehaviour
 {
     public GameObject buttonOn;
     public GameObject buttonOff;
+    public AudioSource winAudio;
+    public string nextScene;
+
     private Killable[] npcs;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,17 @@ public class KillSwitch : MonoBehaviour
         foreach (Killable k in npcs)
         {
             k.dieInMotion();
+        }
+
+        winAudio.Play();
+        StartCoroutine(NextScene());
+    }
+
+    IEnumerator NextScene() {
+        if (nextScene != "") {
+            yield return new WaitForSeconds(2);
+
+            SceneManager.LoadScene(nextScene);
         }
     }
 }
