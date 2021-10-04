@@ -175,4 +175,9 @@ public class CharacterController2D : MonoBehaviour
 		if(m_Grounded)
 			myGoatAnimator.SetBool("grounded", true);
 	}
+
+	public bool getGrounded()
+    {
+		return m_Grounded;
+    }
 }

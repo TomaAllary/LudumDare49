@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playOnWalk : MonoBehaviour
+public class playOnShoot : MonoBehaviour
 {
-    public AudioSource walkywalky;
+    public AudioSource pow;
     public AudioClip clip;
     private float steptick;
-    public CharacterController2D pm;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pow.Play();
     }
 
     // Update is called once per frame
@@ -19,12 +18,12 @@ public class playOnWalk : MonoBehaviour
     {
         
     }
-    
+
     void FixedUpdate()
     {
-        if (steptick <= 0 && Input.GetAxisRaw("Horizontal") != 0 && pm.getGrounded() == true)
+        if (steptick <= 0)
         {
-            walkywalky.PlayOneShot(clip);
+            pow.PlayOneShot(clip);
             steptick = .1f;
         }
 
