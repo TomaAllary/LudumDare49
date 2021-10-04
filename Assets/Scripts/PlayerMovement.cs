@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public HealthBar rageBar;
     public bool inCriss;
 
+    private float rageTimer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,12 +50,14 @@ public class PlayerMovement : MonoBehaviour
         if(rageBar.getRageLevel() >= 1)
         {
             if (!inCriss) //to call it less often
+            {
                 myAnimator.runtimeAnimatorController = inCrissController;
-
-            inCriss = true;
-
-            goatSparkle.gameObject.SetActive(true);
-            controller.m_JumpForce = Constants.goatRageJumpForce;
+                rageTimer = 1;
+                inCriss = true;
+                goatSparkle.gameObject.SetActive(true);
+                controller.m_JumpForce = Constants.goatRageJumpForce;
+            }
+            
         }
         else if(rageBar.getRageLevel() <= 0)
         {
@@ -79,6 +83,19 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, isJumping);
         isJumping = false;
+
+        if (inCriss)
+        {
+            if (rageTimer > 0)
+            {
+                rageTimer -= Time.fixedDeltaTime;
+            }
+            else
+            {
+                rageTimer = 1;
+                rageBar.addHealth(-Constants.rageLostPerSecond);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

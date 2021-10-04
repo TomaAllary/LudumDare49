@@ -24,4 +24,6 @@ public static class Constants
     public const float walkingDeadSpeed = 1f;
     public const float goatNormalJumpForce = 400f;
     public const float goatRageJumpForce = 800f;
+
+    public const float rageLostPerSecond = .25f;
 }
