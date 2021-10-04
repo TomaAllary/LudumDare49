@@ -1646,9 +1646,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1854d86ccca5b1341a9ba39141da192c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  sound: {fileID: 538482234}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkywalky: {fileID: 538482234}
+  clip: {fileID: 8300000, guid: 941e23692c55cc44a8b7fec7cd639e83, type: 3}
 --- !u!1 &676610627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,8 +1699,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -1715,8 +1716,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -1924,7 +1925,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -2803,6 +2804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 794e3fcddfd120848a1016dcdab622c8, type: 3}
+--- !u!198 &1490648691 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4842256289906320199, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
+  m_PrefabInstance: {fileID: 8735964474158396492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542858973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,8 +2905,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 880e59bbd6985bc4d8cde3cf2102fb30, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1572009491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,8 +2936,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -2947,8 +2953,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -3010,7 +3016,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 95550876048724761, guid: 2a0cdee8ea89d0d4183800656423fecf, type: 3}
       propertyPath: crack
-      value:
+      value: 
       objectReference: {fileID: 1588766185}
     - target: {fileID: 7634130933393874404, guid: 2a0cdee8ea89d0d4183800656423fecf, type: 3}
       propertyPath: m_Name
@@ -3095,8 +3101,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3114,8 +3120,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -3483,23 +3489,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735964473776443156, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: healthBar
-      value:
+      value: 
       objectReference: {fileID: 1547238774}
     - target: {fileID: 8735964473776443163, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: cam
-      value:
+      value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 8735964473776443163, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: rageBar
-      value:
+      value: 
       objectReference: {fileID: 1547238774}
     - target: {fileID: 8735964473776443163, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: walkSound
-      value:
+      value: 
       objectReference: {fileID: 538482234}
     - target: {fileID: 8735964473776443163, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: goatSparkle
-      value:
-      objectReference: {fileID: 2099195357}
+      value: 
+      objectReference: {fileID: 1490648691}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
