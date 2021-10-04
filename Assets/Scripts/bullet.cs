@@ -62,6 +62,8 @@ public class bullet : MonoBehaviour
     private IEnumerator PopBullet() {
         Destroy(transform.GetChild(0).gameObject);
         Destroy(GetComponent<SpriteRenderer>());
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<BoxCollider2D>());
 
         Transform popEffect = Instantiate(bulletPop).transform;
 
