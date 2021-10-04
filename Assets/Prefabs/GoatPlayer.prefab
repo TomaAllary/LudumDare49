@@ -5075,11 +5075,13 @@ MonoBehaviour:
   goatSurroundings: {fileID: 8735964473271282229}
   inCrissController: {fileID: 22100000, guid: d8178eb16ca17dd43906b5cb1e021a38, type: 2}
   happyController: {fileID: 22100000, guid: e9caa8ca3eb5e3143a995c7ef74e095e, type: 2}
+  hunterPrefab: {fileID: 875864622339972766, guid: 794e3fcddfd120848a1016dcdab622c8, type: 3}
   runspeed: 40
   rageMeter: 0
   goatSparkle: {fileID: 4842256289906320199}
   rageBar: {fileID: 0}
   inCriss: 0
+  isRamming: 0
 --- !u!50 &8735964473776443162
 Rigidbody2D:
   serializedVersion: 4

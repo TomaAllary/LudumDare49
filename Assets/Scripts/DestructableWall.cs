@@ -19,10 +19,22 @@ public class DestructableWall : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    private void FixedUpdate() {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f, LayerMask.GetMask("Player"));
+        for (int i = 0; i < colliders.Length; i++) {
+            if (colliders[i].gameObject.GetComponent<PlayerMovement>().inCriss && colliders[i].gameObject.GetComponent<PlayerMovement>().isRamming) {
+                //Destroy wall
+                upperWall.SetTrigger("destroy");
+                lowerWall.SetTrigger("destroy");
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
+    }
+
+    /*private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Player") {
             //check if in rage mode and if hitting
-            if (collision.gameObject.GetComponent<PlayerMovement>().inCriss)
+            if (collision.gameObject.GetComponent<PlayerMovement>().inCriss && collision.gameObject.GetComponent<PlayerMovement>().isRamming)
             {
                 //Destroy wall
                 upperWall.SetTrigger("destroy");
@@ -31,7 +43,7 @@ public class DestructableWall : MonoBehaviour
             }
 
         }
-    }
+    }*/
 
     IEnumerator destroyItself() {
         yield return new WaitForSeconds(2);

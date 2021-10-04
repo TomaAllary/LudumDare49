@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public AnimatorOverrideController inCrissController;
     public AnimatorOverrideController happyController;
 
+    public Rigidbody2D[] hunters;
+
     public float runspeed = 40f;
     public float rageMeter = 0f;
     public ParticleSystem goatSparkle;
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator myAnimator;
     public HealthBar rageBar;
     public bool inCriss;
+    public bool isRamming;
 
     private float rageTimer;
 
@@ -27,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         myAnimator = GetComponent<Animator>();
-        inCriss = false;
+        inCriss = isRamming = false;
         goatSparkle.gameObject.SetActive(false);
     }
 
@@ -47,6 +50,12 @@ public class PlayerMovement : MonoBehaviour
         {
             myAnimator.SetBool("isMoving", false);
         }
+
+        if (Input.GetMouseButtonDown(0)) {
+            //play animation ramming. *bool is set through anim events*
+            myAnimator.SetTrigger("slam");
+        }
+
         if(rageBar.getRageLevel() >= 1)
         {
             if (!inCriss) //to call it less often
@@ -105,6 +114,21 @@ public class PlayerMovement : MonoBehaviour
             rageBar.GetComponent<HealthBar>().addHealth(.2f);
         }
 
+    }
+
+
+    public void setRammingFalse() {
+        isRamming = false;
+
+        foreach (Rigidbody2D rb in hunters) {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        }
+    }
+    public void setRammingTrue() {
+        isRamming = true;
+        foreach (Rigidbody2D rb in hunters) {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
 }
