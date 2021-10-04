@@ -22,12 +22,14 @@ public class DestructableWall : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Player") {
             //check if in rage mode and if hitting
+            if (collision.gameObject.GetComponent<PlayerMovement>().inCriss)
+            {
+                //Destroy wall
+                upperWall.SetTrigger("destroy");
+                lowerWall.SetTrigger("destroy");
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
 
-            //Destroy wall
-            upperWall.SetTrigger("destroy");
-            lowerWall.SetTrigger("destroy");
-
-            GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 

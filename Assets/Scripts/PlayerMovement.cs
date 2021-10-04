@@ -45,11 +45,13 @@ public class PlayerMovement : MonoBehaviour
         {
             inCriss = true;
             goatSparkle.gameObject.SetActive(true);
+            controller.m_JumpForce = Constants.goatRageJumpForce;
         }
         else if(rageBar.getRageLevel() <= 0)
         {
             inCriss = false;
             goatSparkle.gameObject.SetActive(false);
+            controller.m_JumpForce = Constants.goatNormalJumpForce;
         }
         if(gameObject.GetComponent<CharacterController2D>().looseRage && !inCriss)
         {
