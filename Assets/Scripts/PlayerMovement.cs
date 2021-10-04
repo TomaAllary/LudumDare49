@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject goatSurroundings;
     public Animator deathAnim;
 
+    public AudioSource hurtAudio;
+
     public AnimatorOverrideController inCrissController;
     public AnimatorOverrideController happyController;
 
@@ -136,5 +138,10 @@ public class PlayerMovement : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
+
+    public void PlayHurtSound() {
+        hurtAudio.Play();
+    }
+
 
 }

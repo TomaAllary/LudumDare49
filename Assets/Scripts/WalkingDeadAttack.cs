@@ -38,6 +38,13 @@ public class WalkingDeadAttack : MonoBehaviour
             Vector3 dir = ((Vector3.up * 5.7f) + (Vector3.right * facingRight * 4.0f)).normalized;
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(collision.gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Constants.walkindDeadPushForce * dir);
+
+            //reset player jump
+            collision.gameObject.GetComponent<CharacterController2D>().ResetJump();
+
+            //hurt
+            collision.gameObject.GetComponent<PlayerMovement>().PlayHurtSound();
+
             rageBar = collision.gameObject.GetComponent<PlayerMovement>().rageBar;
             isAttacking = true;
             timer = .1f;
