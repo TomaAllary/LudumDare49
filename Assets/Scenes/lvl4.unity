@@ -812,11 +812,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5301433466797857745, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.99
+      value: -1.36
       objectReference: {fileID: 0}
     - target: {fileID: 5301433466797857745, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.46
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 5301433466797857745, guid: 0937383185ae73d49a2932cfd0103b54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5245,6 +5245,7 @@ GameObject:
   - component: {fileID: 681533908}
   - component: {fileID: 681533909}
   - component: {fileID: 681533910}
+  - component: {fileID: 681533911}
   m_Layer: 0
   m_Name: LadyGoat
   m_TagString: Untagged
@@ -5395,6 +5396,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106999d655088884a80f8255d6b1bec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainAudio: {fileID: 1356564749}
+  victorySound: {fileID: 8300000, guid: e7cca707e43314241a79c28946a1d799, type: 3}
+--- !u!82 &681533911
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681533904}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &801409027
 GameObject:
   m_ObjectHideFlags: 0
@@ -7052,7 +7151,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40.000004
+      m_AnimationSpeed: 40
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -29, y: -5, z: 0}
@@ -7162,7 +7261,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40.000004
+      m_AnimationSpeed: 40
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -24, y: -5, z: 0}
@@ -7580,7 +7679,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40
+      m_AnimationSpeed: 40.000004
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -5, y: -5, z: 0}
@@ -8834,7 +8933,7 @@ Tilemap:
       - {fileID: 21300000, guid: 2fb530bc4c2b61447b2c6d46bf39a760, type: 3}
       - {fileID: 21300000, guid: 00402f018da4d174db70515a8adfcb1f, type: 3}
       - {fileID: 21300000, guid: a64cb8dfefcf31b438cc23efa1a3c5c8, type: 3}
-      m_AnimationSpeed: 40.000004
+      m_AnimationSpeed: 40
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 52, y: -5, z: 0}
@@ -10091,11 +10190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 482912980474034583, guid: ad6fe20f49cd5844f9d5c8aaa990e089, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.89
+      value: -8.23
       objectReference: {fileID: 0}
     - target: {fileID: 482912980474034583, guid: ad6fe20f49cd5844f9d5c8aaa990e089, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.49
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 482912980474034583, guid: ad6fe20f49cd5844f9d5c8aaa990e089, type: 3}
       propertyPath: m_LocalPosition.z
