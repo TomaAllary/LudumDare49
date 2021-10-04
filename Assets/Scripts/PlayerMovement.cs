@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public Camera cam;
     public GameObject goatSurroundings;
-
     public float runspeed = 40f;
     public float rageMeter = 0f;
     public ParticleSystem goatSparkle;
@@ -16,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator myAnimator;
     public HealthBar rageBar;
     public bool inCriss;
+   
 
     // Start is called before the first frame update
     void Start()
