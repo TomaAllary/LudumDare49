@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MaliciousIntro/MaliciousIntro.unity
-    guid: a6801316a276615419599909c5e0105c
-  - enabled: 1
     path: Assets/Scenes/menu.unity
     guid: 170c7b4a4b3f03c4db3a8f68f9329bce
   - enabled: 1
